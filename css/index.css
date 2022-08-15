@@ -9,6 +9,7 @@
 html{
     font-size: 16px;
     /* 1rem = 16px  */
+    scroll-behavior: smooth;
 }
 
 body{
@@ -48,6 +49,9 @@ h2{
 header{
     background-color: #4e2a84;
     padding: 20px 0;
+    position: fixed;
+    z-index: 100; /* các thuộc tính posotion dựa vào index để sắp xếp thứ tự chồng lên nhau */
+    width: 100%;
 }
 
 .header__content{
@@ -68,11 +72,11 @@ header{
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
+    transition: all 0.5s;
 }
 
 .header__content ul a:hover{
     color: #ff0383;
-    transition: all 0.5s;
 }
 
 .header__content ul li{
@@ -668,6 +672,32 @@ footer{
 .footer__copyright span{
     color: #ff0383;
 }
+
+/* Back to top */
+.backToTop{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.cd-top--is-visible{ 
+    visibility: visible;
+    opacity: 1;
+}
+
+.backToTop i{
+    color: #0bbbcc;
+    border: 2px solid #0bbbcc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 36px;
+}
+
 
 
 

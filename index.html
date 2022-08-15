@@ -28,13 +28,13 @@
         <div class="header__content">
             <p>BAKE</p>
             <nav>
-                <ul>
+                <ul id="mainNav">
                     <li class="active"><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">GALLERY</a></li>
-                    <li><a href="#">CLIENTS</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#intro">ABOUT</a></li>
+                    <li><a href="#services">SERVICE</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#feedback">CLIENTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -48,7 +48,7 @@
         </div>
     </section>
     <!-- INTRO  -->
-    <section class="intro">
+    <section class="intro" id="intro">
         <div class="intro__item intro_text">
             <div>
                 <h3>Tradition</h3>
@@ -116,7 +116,7 @@
         </div>
     </section>
     <!-- SERVICES -->
-    <section class="services">
+    <section class="services" id="services">
         <h2>OUR SERVICES</h2>
         <div class="services__content">
             <div class="services__item">
@@ -146,7 +146,7 @@
         </div>
     </section>
     <!-- GALLERY -->
-    <section class="gallery">
+    <section class="gallery" id="gallery">
         <h2>OUR GALLERY</h2>
         <div class="gallery__content">
             <figure class="gallery__item gallery__g1">
@@ -316,7 +316,7 @@
         </div>
     </section>
     <!-- FEEDBACK -->
-    <section class="feedback">
+    <section class="feedback" id="feedback">
         <h2>TESTIMONIALS</h2>
         <div class="feedback__content">
             <div class="owl-carousel owl-theme">
@@ -336,7 +336,7 @@
         </div>
     </section>
     <!-- CONTACT -->
-    <section class="contact">
+    <section class="contact" id="contact">
         <h2>CONTACT</h2>
         <div class="contact__form">
             <form>
@@ -434,6 +434,11 @@
         </div>
     </footer>
 
+    <!-- Back to top -->
+    <a href="#" class="backToTop cd-top text-replace js-cd-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
     <!-- Thư viện hỗ trợ jquery giúp chạy hiệu ứng của các thư viện animation  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -463,5 +468,27 @@
         })
     </script>
 
+    <!-- Back to Top JS  -->
+    <script src="./js/util.js"></script>
+    <script src="./js/main-backToTop.js"></script>
+
+    <!-- Navigation bar JS  -->
+    <script>
+        // ul tags
+        var mainNav = document.getElementById("mainNav");
+        // li tags
+        var listNav = mainNav.getElementsByTagName("li");
+        for (var i = 0; i < listNav.length; i++){
+            listNav[i].addEventListener("click",function(){
+                // tìm thẻ đang được gắn class active
+                var current = document.querySelector("#mainNav .active");
+                // delete class active của thẻ đang được gắn
+                current.className = current.className.replace("active","");
+                // add class active vào cho thẻ li được click
+                this.className += "active";
+
+            });
+        }
+    </script>
 </body>
 </html>
